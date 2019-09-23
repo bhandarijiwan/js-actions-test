@@ -1,21 +1,32 @@
-name: js-action-test-build
+name: js-action-test-release
 on:
   push:
     branches:
       - master
 jobs:
-  publish-github:
-    needs: build
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: Setup Node.js 12.x
+      - name: Set Node.js 12.x
         uses: actions/setup-node@master
+        with:
+          node-version: '12.x'
 
       - name: Install Dependencies
         run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Flow
+        run: npm run flow
+
+      - name: Test
+        run: npm test
 
       - name: Semantic Release
         run: npm run semantic-release
