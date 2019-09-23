@@ -1,8 +1,8 @@
 module.exports = {
   presets: [
-    "@babel/preset-flow",
+    '@babel/preset-flow',
     [
-      "@babel/preset-env",
+      '@babel/preset-env',
       {
         targets: {
           node: true
@@ -10,4 +10,4 @@ module.exports = {
       }
     ]
   ]
-};
+}
