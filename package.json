@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "flow": "flow",
-    "lint": "eslint './**/*.js'"
+    "lint": "eslint './**/*.js'",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -38,7 +39,8 @@
     "flow-bin": "0.108.0",
     "husky": "3.0.5",
     "jest": "24.9.0",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "semantic-release": "15.13.24"
   },
   "husky": {
     "hooks": {
