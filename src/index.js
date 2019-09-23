@@ -1,1 +1,1 @@
-export * from './dateOperators'
+export * from './dateOperators';
