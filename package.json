@@ -46,7 +46,7 @@
     "husky": "3.0.5",
     "jest": "24.9.0",
     "prettier": "1.18.2",
-    "semantic-release": "16.0.0-beta.24"
+    "semantic-release": "latest"
   },
   "husky": {
     "hooks": {
