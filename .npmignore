@@ -1,0 +1,4 @@
+# test files
+*.test.js
+.DS_Store
+coverage

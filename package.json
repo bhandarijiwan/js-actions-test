@@ -1,11 +1,12 @@
 {
-  "name": "js-actions-test",
+  "name": "@bhandarijiwan/js-actions-test",
   "version": "1.0.0",
   "description": "testing github actions",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "flow": "flow",
+    "build": "./node_modules/.bin/babel src -d dist --ignore 'src/**/*.test.js' ",
     "lint": "eslint './**/*.js'",
     "semantic-release": "semantic-release"
   },
@@ -15,6 +16,10 @@
   },
   "keywords": [
     "github-actions"
+  ],
+  "files": [
+    "src",
+    "dist"
   ],
   "author": "Jiwan Bhandari",
   "license": "ISC",
@@ -26,6 +31,7 @@
     "dayjs": "^1.8.16"
   },
   "devDependencies": {
+    "@babel/cli": "7.6.0",
     "@babel/core": "7.6.0",
     "@babel/preset-env": "7.6.0",
     "@babel/preset-flow": "7.0.0",

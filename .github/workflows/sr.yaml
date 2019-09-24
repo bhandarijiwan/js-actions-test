@@ -30,3 +30,5 @@ jobs:
 
       - name: Semantic Release
         run: npm run semantic-release
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
