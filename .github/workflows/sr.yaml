@@ -37,6 +37,6 @@ jobs:
           node-version: '12.x'
           registry-url: https://npm.pkg.github.com/
           scope: '@bhandarijiwan'
-      - run: npm run semantic-release
+      - run: npx semantic-release
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
