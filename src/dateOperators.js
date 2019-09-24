@@ -67,6 +67,11 @@ export const DateTimeOperators = {
 };
 
 export const DateOperators = {
+  /** Checks if d1 is equal to d2
+   * @param  {DateType} d1
+   * @param  {DateType} d2
+   * @returns boolean
+   */
   eq: (d1: DateType, d2: DateType): boolean => {
     const d1Null = d1 === null || d1 === undefined;
     const d2Null = d2 === null || d2 === undefined;
@@ -79,6 +84,11 @@ export const DateOperators = {
     }
     return dayjs(d1).isSame(d2, 'day');
   },
+  /** Checkist if d1 is not equal to d2
+   * @param  {DateType} d1
+   * @param  {DateType} d2
+   * @returns boolean
+   */
   ne: (d1: DateType, d2: DateType): boolean => {
     const d1Null = d1 === null || d1 === undefined;
     const d2Null = d2 === null || d2 === undefined;
@@ -90,6 +100,12 @@ export const DateOperators = {
     }
     return !dayjs(d1).isSame(d2, 'day');
   },
+
+  /** Checks if d1 is after d2
+   * @param  {DateType} d1
+   * @param  {DateType} d2
+   * @returns boolean
+   */
   gt: (d1: DateType, d2: DateType): boolean => {
     const d1Null = d1 === null || d1 === undefined;
     const d2Null = d2 === null || d2 === undefined;
@@ -101,13 +117,30 @@ export const DateOperators = {
     }
     return dayjs(d1).isAfter(dayjs(d2), 'day');
   },
+
+  /** Checks if d1 is before d2
+   * @param  {DateType} d1
+   * @param  {DateType} d2
+   * @returns boolean
+   */
   lt: (d1: DateType, d2: DateType): boolean => {
     return DateOperators.gt(d2, d1);
   },
+
+  /** Checks if d1 is the same day or after d2
+   * @param  {DateType} d1
+   * @param  {DateType} d2
+   */
   gte: (d1: DateType, d2: DateType) => {
     const { eq, gt } = DateOperators;
     return eq(d1, d2) || gt(d1, d2);
   },
+
+  /** Checks if d1 is the same day or before
+   * @param  {DateType} d1
+   * @param  {DateType} d2
+   * @returns boolean
+   */
   lte: (d1: DateType, d2: DateType): boolean => {
     const { eq, lt } = DateOperators;
     return eq(d1, d2) || lt(d1, d2);
