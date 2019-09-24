@@ -45,4 +45,3 @@ jobs:
         run: export GITHUB_ACTION=sr && npm run semantic-release
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
