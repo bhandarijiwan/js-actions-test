@@ -11,6 +11,11 @@ const IS_NULL_EQUALS_NULL = false;
  * this collection, it will fallback to StringshOperators.
  */
 export const DateTimeOperators = {
+  /** Checks if d1 is within a mintue of d2
+   * @param  {DateType} d1
+   * @param  {DateType} d2
+   * @returns boolean
+   */
   eq: (d1: DateType, d2: DateType): boolean => {
     const d1Null = d1 === null || d1 === undefined;
     const d2Null = d2 === null || d2 === undefined;
