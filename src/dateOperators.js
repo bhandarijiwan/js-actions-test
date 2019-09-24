@@ -11,7 +11,8 @@ const IS_NULL_EQUALS_NULL = false;
  * this collection, it will fallback to StringshOperators.
  */
 export const DateTimeOperators = {
-  /** Checks if d1 is within a mintue of d2
+  /** Returns true if d1 is within a mintue of d2
+   * otherwise returns false
    * @param  {DateType} d1
    * @param  {DateType} d2
    * @returns boolean
@@ -28,9 +29,12 @@ export const DateTimeOperators = {
     }
     return dayjs(d1).isSame(dayjs(d2), 'minute');
   },
-  /**
-   * Returns true if d1 and d2 are not within the same
-   * minute
+
+  /** Returns true if d1 is not within a minute of d2
+   * otherwise returns false
+   * @param  {DateType} d1
+   * @param  {DateType} d2
+   * @returns boolean
    */
   nq: (d1: DateType, d2: DateType): boolean => {
     const d1Null = d1 === null || d1 === undefined;
