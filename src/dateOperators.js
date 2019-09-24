@@ -48,7 +48,12 @@ export const DateTimeOperators = {
     }
     return !dayjs(d1).isSame(dayjs(d2), 'minute');
   },
-  /** */
+
+  /** Returns true if d1 is after d2 by more than mintue
+   * @param  {DateType} d1
+   * @param  {DateType} d2
+   * @returns boolean
+   */
   gt: (d1: DateType, d2: DateType): boolean => {
     const d1Null = d1 === null || d1 === undefined;
     const d2Null = d2 === null || d2 === undefined;
