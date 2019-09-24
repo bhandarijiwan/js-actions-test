@@ -28,7 +28,13 @@ jobs:
       - name: Test
         run: npm test
 
-      - name: Semantic Release
-        run: npm run semantic-release
+      - name: Publish-GPR
+        with:
+          node-version: '12.x'
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      # - name: Semantic Release
+      #   run: npm run semantic-release
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
