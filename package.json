@@ -6,9 +6,11 @@
   "scripts": {
     "test": "jest",
     "flow": "flow",
-    "build": "./node_modules/.bin/babel src -d dist --ignore 'src/**/*.test.js' ",
+    "build:umd": "rollup --config",
+    "build:src": "./node_modules/.bin/babel src -d dist --ignore 'src/**/*.test.js' ",
     "lint": "eslint './**/*.js'",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "prepare": "npm run build:src && npm run build:umd"
   },
   "repository": {
     "type": "git",
@@ -18,8 +20,8 @@
     "github-actions"
   ],
   "files": [
-    "src",
-    "dist"
+    "dist",
+    "umd"
   ],
   "author": "Jiwan Bhandari",
   "license": "ISC",
@@ -28,7 +30,7 @@
   },
   "homepage": "https://github.com/bhandarijiwan/js-actions-test#readme",
   "dependencies": {
-    "dayjs": "^1.8.16"
+    "dayjs": "1.8.16"
   },
   "devDependencies": {
     "@babel/cli": "7.6.0",
@@ -47,6 +49,10 @@
     "husky": "3.0.5",
     "jest": "24.9.0",
     "prettier": "1.18.2",
+    "rollup": "1.21.4",
+    "rollup-plugin-babel": "4.3.3",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-node-resolve": "5.2.0",
     "semantic-release": "latest"
   },
   "husky": {
